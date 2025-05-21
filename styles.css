@@ -171,3 +171,33 @@ nav{margin-left:auto}
 ========================================================= */
 @keyframes fadeInDown{0%{opacity:0;transform:translateY(-52px)}100%{opacity:1;transform:none}}
 @keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+/* ═════════ Chrome-specific clutch overrides ═════════ */
+
+/* — Hero banner: never taller than 180 px (110 px on phones) — */
+.hero,
+.pro-hero{
+  height:180px !important;          /* desktop & tablet */
+  max-height:180px !important;
+}
+.hero-bg,
+.hero-img-fallback{
+  height:100% !important;           /* fill the 180 px box */
+  object-fit:cover !important;
+}
+@media (max-width:600px){
+  .hero,
+  .pro-hero{
+    height:110px !important;
+    max-height:110px !important;
+  }
+}
+
+/* — Gallery thumbnails: cap height and keep aspect ratio — */
+.gallery-grid img{
+  height:160px !important;          /* desktop thumbnail */
+  width:100% !important;
+  object-fit:cover !important;
+}
+@media (max-width:600px){
+  .gallery-grid img{height:110px !important;}
+}
