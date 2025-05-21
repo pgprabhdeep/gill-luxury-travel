@@ -7,16 +7,17 @@
   <meta name="description" content="Gill Luxury Travel delivers luxury vacations, private concierge, and premium travel planning for those who expect the best.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="styles.css">
   <style>html { scroll-behavior: smooth; }</style>
 </head>
 <body>
   <!-- Floating Contact Buttons -->
-  <a href="tel:4037141286" class="float-btn call-btn" title="Call Us"><i class="fa fa-phone"></i></a>
-  <a href="mailto:pgill@travelonly.com" class="float-btn email-btn" title="Email Us"><i class="fa fa-envelope"></i></a>
+  <a href="https://wa.me/14037141286" class="float-btn whatsapp-btn" title="Chat on WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
   <a href="https://www.instagram.com/gillluxurytravel" class="float-btn insta-btn" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-
+  
   <!-- Lightbox -->
   <div id="lightbox" onclick="this.style.display='none'">
     <img id="lightbox-img" alt="Enlarged Gallery Image">
@@ -29,9 +30,10 @@
       <nav>
         <ul class="nav-list">
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#partners">Partners</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
@@ -45,29 +47,51 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero" style="background-image:url('hero.jpg.png')">
+  <!-- HERO VIDEO -->
+  <section id="home" class="hero pro-hero">
+    <video autoplay muted loop playsinline class="hero-bg">
+      <source src="hero-video.mp4" type="video/mp4">
+      <img src="hero.jpg.png" alt="Luxury Background" class="hero-img-fallback">
+    </video>
     <div class="hero-overlay"></div>
     <div class="container hero-content" data-aos="fade-up">
-      <h1 class="lux-headline"><span>LUXURY IS A JOURNEY,</span><br><span class="gold">NOT A DESTINATION</span></h1>
-      <p>
-        Discover a world where every detail is elevated, every request anticipated, and every moment is unforgettable.<br>
-        <b>Gill Luxury Travel</b> is your passport to private escapes, exclusive experiences, and tailored adventures—crafted for those who expect the best.
+      <h1 class="lux-headline">
+        <span class="lux-main">Indulge in the World’s Most<br><span class="lux-gold">Exclusive Escapes</span></span>
+      </h1>
+      <p class="lux-desc">
+        Curated journeys, private villas, and ultra-personalized service—<br>
+        this is travel beyond imagination.
       </p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn-primary">Start Your Journey</a>
-      </div>
+      <a href="#contact" class="btn-lux">Start Your Journey</a>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section about" data-aos="fade-up">
+  <!-- WHY CHOOSE US -->
+  <section id="why" class="section why" data-aos="fade-up">
     <div class="container">
-      <h2>About Gill Luxury Travel</h2>
-      <p>
-        At Gill Luxury Travel, we redefine your idea of “vacation.” Our founder, Prabhdeep Singh Gill, brings years of global travel insight and elite connections to curate each journey as a signature experience.<br><br>
-        From the Maldives to Paris, Banff to Bora Bora, our team designs escapes for those who want more than a trip—they want a legacy of memories.
-      </p>
+      <h2>Why Choose Gill Luxury Travel?</h2>
+      <div class="why-grid">
+        <div>
+          <i class="fa fa-star"></i>
+          <h4>Bespoke Service</h4>
+          <p>Every itinerary is hand-crafted for your unique style and dreams.</p>
+        </div>
+        <div>
+          <i class="fa fa-globe"></i>
+          <h4>Global Expertise</h4>
+          <p>Worldwide connections and 24/7 local support wherever you go.</p>
+        </div>
+        <div>
+          <i class="fa fa-users"></i>
+          <h4>Diverse & Inclusive</h4>
+          <p>Serving clients from all backgrounds with cultural understanding.</p>
+        </div>
+        <div>
+          <i class="fa fa-gem"></i>
+          <h4>VIP Access</h4>
+          <p>Private upgrades, elite lounges, and experiences not found online.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -111,19 +135,62 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- PARTNERS SLIDER -->
+  <section id="partners" class="section partners" data-aos="fade-up">
+    <div class="container">
+      <h2>Our Trusted Partners</h2>
+      <div class="partners-slider">
+        <div><img src="marriott.png" alt="Marriott"></div>
+        <div><img src="westjet.png" alt="WestJet"></div>
+        <div><img src="aircanada.png" alt="Air Canada"></div>
+        <div><img src="princess.png" alt="Princess Cruises"></div>
+        <div><img src="hilton.png" alt="Hilton"></div>
+        <div><img src="msc.png" alt="MSC Cruises"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS CAROUSEL -->
   <section id="testimonials" class="section testimonials" data-aos="fade-up">
     <div class="container">
       <h2>What Our Clients Say</h2>
-      <div class="testimonial-grid">
-        <blockquote>
-          “Our honeymoon was flawless—every moment exceeded expectations.”
-          <footer>— Sarah & Michael</footer>
-        </blockquote>
-        <blockquote>
-          “Gill Luxury Travel delivered the trip of a lifetime. Impeccable service!”
-          <footer>— Rebecca K.</footer>
-        </blockquote>
+      <div class="testimonial-slider">
+        <div>
+          <blockquote>
+            “Our honeymoon was flawless—every moment exceeded expectations.”
+            <footer>— Sarah & Michael (Canada)</footer>
+          </blockquote>
+        </div>
+        <div>
+          <blockquote>
+            “We’re a family from India and Gill Luxury Travel made our Paris dream trip seamless and luxurious.”
+            <footer>— Neha & Harpreet (India)</footer>
+          </blockquote>
+        </div>
+        <div>
+          <blockquote>
+            “As a solo traveler from Nigeria, I felt safe, supported, and truly pampered. Thank you!”
+            <footer>— Adewale O. (Nigeria)</footer>
+          </blockquote>
+        </div>
+        <div>
+          <blockquote>
+            “We’ve used many travel agents—Gill Luxury is next level. Attentive, personal, and ultra-premium.”
+            <footer>— Michael S. & family (UK)</footer>
+          </blockquote>
+        </div>
+        <div>
+          <blockquote>
+            “Our destination wedding in Mexico was pure magic—every detail perfect. Highly recommended!”
+            <footer>— Ana & Luis (Mexico)</footer>
+          </blockquote>
+        </div>
+        <div>
+          <blockquote>
+            “Gill Luxury Travel respects every culture and went above and beyond for our multi-generational Chinese family tour.”
+            <footer>— Lin Wang (China/Canada)</footer>
+          </blockquote>
+        </div>
       </div>
     </div>
   </section>
@@ -132,11 +199,16 @@
   <section id="contact" class="section contact" data-aos="fade-up">
     <div class="container">
       <h2>Contact Us</h2>
+      <div class="contact-buttons">
+        <a href="tel:4037141286" class="btn-lux"><i class="fa fa-phone"></i> Call 403-714-1286</a>
+        <a href="mailto:pgill@travelonly.com" class="btn-lux-alt"><i class="fa fa-envelope"></i> Email</a>
+        <a href="https://www.instagram.com/gillluxurytravel" class="btn-lux-alt" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
       <form action="mailto:pgill@travelonly.com" method="POST" enctype="text/plain">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn-primary"><i class="fa fa-paper-plane"></i> Send Message</button>
+        <button type="submit" class="btn-lux"><i class="fa fa-paper-plane"></i> Send Message</button>
       </form>
       <p class="contact-info">
         <b>Prabhdeep Singh Gill</b> &nbsp;|&nbsp; 403-714-1286 &nbsp;|&nbsp; pgill@travelonly.com
@@ -151,18 +223,49 @@
     </div>
   </footer>
 
+  <!-- SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     AOS.init({ duration: 900, once: true });
+
     // Mobile nav toggle
     document.querySelector('.mobile-toggle').addEventListener('click', () => {
       document.querySelector('.nav-list').classList.toggle('open');
     });
+
     // Lightbox
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').style.display = 'flex';
     }
+
+    // Partners slider
+    $(document).ready(function () {
+      $('.partners-slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2200,
+        arrows: false,
+        dots: false,
+        responsive: [
+          { breakpoint: 900, settings: { slidesToShow: 3 } },
+          { breakpoint: 600, settings: { slidesToShow: 2 } }
+        ]
+      });
+      $('.testimonial-slider').slick({
+        slidesToShow: 1,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 4500,
+        adaptiveHeight: true
+      });
+    });
   </script>
+  <!-- TIDIO AI CHATBOT -->
+  <script src="//code.tidio.co/znhqtvynz3dazeltuwoz9ilsds21c0u2.js" async></script>
 </body>
 </html>
