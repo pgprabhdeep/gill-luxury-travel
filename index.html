@@ -7,10 +7,20 @@
   <meta name="description" content="Gill Luxury Travel delivers luxury vacations, private concierge, and premium travel planning for those who expect the best.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="styles.css">
   <style>html { scroll-behavior: smooth; }</style>
 </head>
 <body>
+  <!-- Floating Contact Buttons -->
+  <a href="tel:4037141286" class="float-btn call-btn" title="Call Us"><i class="fa fa-phone"></i></a>
+  <a href="mailto:pgill@travelonly.com" class="float-btn email-btn" title="Email Us"><i class="fa fa-envelope"></i></a>
+  <a href="https://www.instagram.com/gillluxurytravel" class="float-btn insta-btn" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" alt="Enlarged Gallery Image">
+  </div>
 
   <!-- HEADER -->
   <header>
@@ -26,7 +36,7 @@
           <li><a href="#contact">Contact</a></li>
           <li>
             <a href="https://www.instagram.com/gillluxurytravel" target="_blank">
-              <i class="fab fa-instagram"></i> Instagram
+              <i class="fab fa-instagram"></i>
             </a>
           </li>
         </ul>
@@ -38,49 +48,47 @@
   <!-- HERO -->
   <section id="home" class="hero" style="background-image:url('hero.jpg.png')">
     <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <h1>Luxury Is a Journey, Not a Destination</h1>
+    <div class="container hero-content" data-aos="fade-up">
+      <h1 class="lux-headline"><span>LUXURY IS A JOURNEY,</span><br><span class="gold">NOT A DESTINATION</span></h1>
       <p>
-        Discover a world where every detail is elevated, every request anticipated, and every moment is unforgettable. <br>
+        Discover a world where every detail is elevated, every request anticipated, and every moment is unforgettable.<br>
         <b>Gill Luxury Travel</b> is your passport to private escapes, exclusive experiences, and tailored adventures—crafted for those who expect the best.
       </p>
       <div class="hero-buttons">
-        <a href="tel:4037141286" class="btn-primary"><i class="fa fa-phone"></i> Call Now</a>
-        <a href="mailto:pgill@travelonly.com" class="btn-secondary"><i class="fa fa-envelope"></i> Email Us</a>
-        <a href="https://www.instagram.com/gillluxurytravel" class="btn-secondary" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#contact" class="btn-primary">Start Your Journey</a>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="section about">
+  <section id="about" class="section about" data-aos="fade-up">
     <div class="container">
       <h2>About Gill Luxury Travel</h2>
       <p>
-        At Gill Luxury Travel, we redefine your idea of “vacation.” Our founder, Prabhdeep Singh Gill, brings years of global travel insight and elite connections to curate each journey as a signature experience. <br><br>
+        At Gill Luxury Travel, we redefine your idea of “vacation.” Our founder, Prabhdeep Singh Gill, brings years of global travel insight and elite connections to curate each journey as a signature experience.<br><br>
         From the Maldives to Paris, Banff to Bora Bora, our team designs escapes for those who want more than a trip—they want a legacy of memories.
       </p>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="section services">
+  <section id="services" class="section services" data-aos="fade-up">
     <div class="container">
       <h2>Our Services</h2>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-right">
           <h3>Luxury Packages</h3>
           <p>Handpicked five-star escapes—private islands, palace resorts, and seamless first-class travel, all handled for you.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-right" data-aos-delay="150">
           <h3>Concierge</h3>
           <p>Personal assistance around the clock: restaurant bookings, events, spa, drivers, translators, and more—wherever you go.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-left" data-aos-delay="300">
           <h3>Private Tours</h3>
           <p>VIP access to world wonders, secret gems, and curated guides. Travel like an insider, not a tourist.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-left" data-aos-delay="450">
           <h3>Yachts & Villas</h3>
           <p>Sail in ultimate comfort or relax in private estates—choose seclusion or adventure, but never compromise on luxury.</p>
         </div>
@@ -89,22 +97,22 @@
   </section>
 
   <!-- GALLERY -->
-  <section id="gallery" class="section gallery">
+  <section id="gallery" class="section gallery" data-aos="fade-up">
     <div class="container">
       <h2>Gallery</h2>
       <div class="gallery-grid">
-        <img src="gallery1.jpg.png" alt="Overwater Villa, Maldives">
-        <img src="gallery2.jpg.png" alt="Paris Luxury">
-        <img src="gallery3.jpg.png" alt="Mountain Lodge">
-        <img src="gallery4.jpg.png" alt="Luxury Yacht">
-        <img src="gallery5.jpg.png" alt="Private Pool Villa">
-        <img src="gallery6.jpg.png" alt="Tropical Paradise">
+        <img src="gallery1.jpg.png" alt="Overwater Villa, Maldives" onclick="openLightbox(this.src)">
+        <img src="gallery2.jpg.png" alt="Paris Luxury" onclick="openLightbox(this.src)">
+        <img src="gallery3.jpg.png" alt="Mountain Lodge" onclick="openLightbox(this.src)">
+        <img src="gallery4.jpg.png" alt="Luxury Yacht" onclick="openLightbox(this.src)">
+        <img src="gallery5.jpg.png" alt="Private Pool Villa" onclick="openLightbox(this.src)">
+        <img src="gallery6.jpg.png" alt="Tropical Paradise" onclick="openLightbox(this.src)">
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section id="testimonials" class="section testimonials">
+  <section id="testimonials" class="section testimonials" data-aos="fade-up">
     <div class="container">
       <h2>What Our Clients Say</h2>
       <div class="testimonial-grid">
@@ -121,14 +129,9 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section contact">
+  <section id="contact" class="section contact" data-aos="fade-up">
     <div class="container">
       <h2>Contact Us</h2>
-      <div class="contact-buttons">
-        <a href="tel:4037141286" class="btn-primary"><i class="fa fa-phone"></i> Call 403-714-1286</a>
-        <a href="mailto:pgill@travelonly.com" class="btn-secondary"><i class="fa fa-envelope"></i> Email pgill@travelonly.com</a>
-        <a href="https://www.instagram.com/gillluxurytravel" class="btn-secondary" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-      </div>
       <form action="mailto:pgill@travelonly.com" method="POST" enctype="text/plain">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
@@ -148,11 +151,18 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
+    AOS.init({ duration: 900, once: true });
     // Mobile nav toggle
     document.querySelector('.mobile-toggle').addEventListener('click', () => {
       document.querySelector('.nav-list').classList.toggle('open');
     });
+    // Lightbox
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
   </script>
 </body>
 </html>
