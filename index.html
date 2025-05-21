@@ -1,102 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gill Luxury Travel</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Gill Luxury Travel Logo" />
+      <span>Gill Luxury Travel</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-title">Gill Luxury Travel</div>
-      <p style="font-size:1.18rem; max-width:580px; margin:0 auto 28px;">
-        Discover a world of unforgettable journeys, tailored exclusively for you.
-      </p>
-      <a href="#contact">
-        <button class="hero-btn">Start Your Journey</button>
-      </a>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Experience the World in Luxury</h1>
+      <p>Tailored travel experiences just for you.</p>
+      <a href="#contact" class="btn">Start Your Journey</a>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="container about-flex">
-      <div class="about-photo">
-        <img src="IMG_3514.jpeg" alt="Prabhdeep Singh Gill" />
-      </div>
-      <div class="about-info">
-        <h2>About Prabhdeep Singh Gill</h2>
-        <p>
-          Hi! I'm Prabhdeep Singh Gill, founder of Gill Luxury Travel. I specialize in creating luxury, personalized travel experiences for my clients. Let's make your next trip unforgettable. Based in Calgary, AB.  
-        </p>
-        <div class="contact-options">
-          <a href="tel:+14037141286" class="call-btn">Call Me</a>
-          <a href="mailto:pgill@travelonly.com" class="email-btn">Email Me</a>
-        </div>
-      </div>
-    </div>
+  <section id="about" class="about">
+    <h2>About Gill Luxury Travel</h2>
+    <p>
+      Welcome to Gill Luxury Travel, your personal gateway to extraordinary destinations, premium resorts, and unforgettable experiences. 
+      Led by Prabhdeep Singh Gill, our mission is to provide you with bespoke travel planning and VIP service, wherever your dreams take you.
+    </p>
   </section>
 
-  <!-- Services Section -->
-  <section id="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Luxury Vacations</h3>
-          <p>Handpicked premium resorts and private villas in the world's most exclusive destinations.</p>
-        </div>
-        <div class="service-card">
-          <h3>Personalized Tours</h3>
-          <p>Custom-designed itineraries based on your interests, schedule, and travel style.</p>
-        </div>
-        <div class="service-card">
-          <h3>Business & Group Travel</h3>
-          <p>Flawless planning for corporate trips, group getaways, and special occasions.</p>
-        </div>
-        <div class="service-card">
-          <h3>VIP Services</h3>
-          <p>Airport lounge access, fast-track, luxury transfers, and concierge support worldwide.</p>
-        </div>
+  <section id="packages" class="packages">
+    <h2>Luxury Packages</h2>
+    <div class="package-list">
+      <div class="package">
+        <h3>Maldives Escape</h3>
+        <p>Private villa, overwater bungalows, personal butler, gourmet dining, and more.</p>
+      </div>
+      <div class="package">
+        <h3>European Grand Tour</h3>
+        <p>First-class rail, five-star hotels in Paris, Rome & Lake Como, custom sightseeing.</p>
+      </div>
+      <div class="package">
+        <h3>Banff & Rockies Retreat</h3>
+        <p>Luxury lodge, private tours, hot springs, and panoramic helicopter rides.</p>
       </div>
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section id="gallery">
-    <div class="container">
-      <h2>Gallery</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item">Luxury Resort</div>
-        <div class="gallery-item">Exotic Beach</div>
-        <div class="gallery-item">Cultural Adventure</div>
-        <div class="gallery-item">First Class Flight</div>
-        <div class="gallery-item">City Escape</div>
-        <div class="gallery-item">Cruise Holiday</div>
-        <div class="gallery-item">Wildlife Tour</div>
-        <div class="gallery-item">Mountain Retreat</div>
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Lake Louise, Canada" />
+      <img src="https://images.unsplash.com/photo-1465156799763-2c087c332922?auto=format&fit=crop&w=400&q=80" alt="Santorini, Greece" />
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Paris, France" />
+      <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=400&q=80" alt="Maldives" />
+      <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=400&q=80" alt="Dubai" />
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Tropical Beach" />
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-list">
+      <div class="testimonial">
+        <p>“Absolutely seamless luxury travel! Every detail was perfect.”</p>
+        <span>- Aman S.</span>
+      </div>
+      <div class="testimonial">
+        <p>“The best vacation we've ever had. Highly recommend Gill Luxury Travel!”</p>
+        <span>- Jaspreet K.</span>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form class="contact-form" autocomplete="off">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <textarea name="message" placeholder="Tell us about your dream trip..." rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-details">
+      <p><strong>Prabhdeep Singh Gill</strong></p>
+      <p>403-714-1286</p>
+      <p>pgill@travelonly.com</p>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 Gill Luxury Travel. Crafted with passion.
+    <p>&copy; 2025 Gill Luxury Travel. All rights reserved.</p>
   </footer>
 </body>
 </html>
