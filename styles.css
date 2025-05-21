@@ -1,13 +1,9 @@
 /* =========================================================
-   Gill Luxury Travel  –  FULL LUXURY STYLESHEET
-   • Tiny hero banner (160 / 110 px)
-   • Flights / Hotels / All-Inclusive / Cruises services
-   • Mobile readability tweaks
-   • Testimonials slider
-   (updated 2025-05-21 — tagline highlight added)
+   Gill Luxury Travel – Full Cross-Browser Stylesheet
+   Updated: 2025-05-21  (includes tagline colour override)
 ========================================================= */
 
-/* ---------- Global tokens ---------- */
+/* ---------- Variables ---------- */
 :root{
   --navy:#0A1931;
   --gold:#D4AF37;
@@ -19,22 +15,20 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-/* ---------- Base text ---------- */
 body{
   font-family:'Montserrat',sans-serif;
   color:var(--navy);
   background:var(--gray);
-  min-height:100vh;
   background-image:linear-gradient(120deg,#e8eaf6 0%,#f7f3e7 90%);
   background-attachment:fixed;
-  font-size:16px;
-  line-height:1.6;
+  min-height:100vh;
+  font-size:16px;line-height:1.6;
 }
 
 .container{width:min(92%,1200px);margin:0 auto}
 
 a{color:var(--gold);text-decoration:none}
-a:hover,a:focus{color:#a6831b;text-decoration:underline}
+a:hover{color:#a6831b;text-decoration:underline}
 
 /* =========================================================
    HEADER & NAV
@@ -44,7 +38,7 @@ header{position:fixed;inset:0 0 auto;background:var(--navy);color:#fff;width:100
 .logo img{height:52px;width:52px;border:2px solid var(--gold);border-radius:50%;object-fit:cover;background:#fff}
 nav{margin-left:auto}
 .nav-list{display:flex;gap:32px;align-items:center;list-style:none;font-family:'Playfair Display',serif}
-.nav-list li a{font-weight:700;color:#fff;font-size:1.08rem;letter-spacing:.5px;padding:7px 16px;border-radius:6px;transition:.2s}
+.nav-list li a{font-weight:700;color:#fff;font-size:1.08rem;padding:7px 16px;border-radius:6px;transition:.2s}
 .nav-list li a:hover{background:var(--gold);color:var(--navy)}
 .mobile-toggle{display:none;font-size:2.1rem;margin-left:22px;color:var(--gold);cursor:pointer}
 
@@ -57,14 +51,29 @@ nav{margin-left:auto}
 .mobile-nav-content a:hover{color:#fff}
 
 /* =========================================================
-   HERO  (tiny banner only)
+   HERO  (tiny banner)
 ========================================================= */
-.hero,.pro-hero{position:relative;height:auto;min-height:0;margin-top:66px;background:var(--hero-gradient);overflow:hidden;box-shadow:0 8px 20px #00000022}
-.hero-bg,.hero-img-fallback{width:100%;height:160px;object-fit:cover;filter:brightness(.68) contrast(1.05)}
+.hero,.pro-hero{
+  margin-top:66px;
+  position:relative;
+  background:var(--hero-gradient);
+  overflow:hidden;
+  box-shadow:0 8px 20px #0003;
+}
+.hero-bg,.hero-img-fallback{
+  width:100%;
+  height:180px;max-height:180px;
+  object-fit:cover;
+  filter:brightness(.68) contrast(1.05);
+  display:block;                 /* removes inline gap */
+}
+@media (max-width:600px){
+  .hero-bg,.hero-img-fallback{height:110px;max-height:110px}
+}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,25,49,.74) 65%,rgba(212,175,55,.07) 100%)}
 
 /* =========================================================
-   MINI HERO CAPTION (headline & CTA)
+   MINI-HERO CAPTION
 ========================================================= */
 .lux-headline{font-family:'Playfair Display',serif;font-weight:900;font-size:2.2rem;line-height:1.15;margin-bottom:16px;text-shadow:0 3px 12px #0008;color:var(--navy)}
 .lux-gold{color:var(--gold)}
@@ -72,17 +81,17 @@ nav{margin-left:auto}
 .btn-lux,.btn-lux-alt{
   background:linear-gradient(90deg,#D4AF37 10%,#b79527 90%);
   color:var(--navy);padding:12px 30px;font-size:1rem;border-radius:10px;font-weight:800;
-  border:none;box-shadow:0 4px 18px #d4af3744;cursor:pointer;transition:.2s;letter-spacing:.5px
+  border:none;box-shadow:0 4px 18px #d4af3744;cursor:pointer;transition:.2s
 }
 .btn-lux:hover,.btn-lux-alt:hover{background:var(--navy);color:var(--gold);border:2px solid var(--gold)}
 .btn-lux-alt{background:#f9f5ee;color:var(--navy);border:2px solid #e7c37b}
 .btn-lux-alt:hover{background:var(--gold);color:#fff}
 
 /* =========================================================
-   CORE SECTIONS
+   SECTIONS
 ========================================================= */
 .section{padding:80px 0}
-.section h2{text-align:center;font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;margin-bottom:38px;color:var(--navy)}
+.section h2{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;text-align:center;color:var(--navy);margin-bottom:38px}
 
 /* Why / Services */
 .why-grid,.services-grid{display:grid;gap:28px}
@@ -90,7 +99,7 @@ nav{margin-left:auto}
 .why-grid i{font-size:2rem;color:var(--gold);margin-bottom:8px}
 .why-grid h4{font-size:1.1rem;margin-bottom:6px}
 .services-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.service-card{background:#fffefb;padding:26px 22px;border:1px solid #ece6d8;border-radius:16px;box-shadow:0 4px 20px #d4af3733;transition:.2s}
+.service-card{background:#fffefb;border:1px solid #ece6d8;border-radius:16px;padding:26px 22px;box-shadow:0 4px 20px #d4af3733;transition:.2s}
 .service-card:hover{transform:translateY(-6px);box-shadow:0 14px 34px #d4af3760;background:#f6f3ed}
 .service-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:10px}
 
@@ -103,7 +112,7 @@ nav{margin-left:auto}
 #lightbox{display:none;position:fixed;inset:0;background:rgba(10,25,49,.97);z-index:2222;align-items:center;justify-content:center}
 #lightbox img{max-width:94vw;max-height:84vh;border:4px solid var(--gold);border-radius:14px;box-shadow:0 8px 36px #000a}
 
-/* Testimonials slider */
+/* Testimonials */
 .testimonial-slider{text-align:center;margin-top:8px}
 .testimonial-slider blockquote{background:#fff;border-left:6px solid var(--gold);border-radius:15px;padding:24px 20px;font-style:italic;font-size:1.05rem;box-shadow:0 2px 18px #d4af3722;max-width:620px;margin:0 auto}
 .testimonial-slider footer{text-align:right;font-weight:600;margin-top:10px;font-size:.95rem}
@@ -129,7 +138,7 @@ nav{margin-left:auto}
 .insta-btn:hover{background:#fff;color:#E4405F}
 
 /* =========================================================
-   RESPONSIVE & MOBILE READABILITY
+   RESPONSIVE
 ========================================================= */
 @media (max-width:1200px){.container{width:98%}}
 @media (max-width:900px){.services-grid,.gallery-grid,.why-grid{grid-template-columns:1fr 1fr}}
@@ -144,18 +153,17 @@ nav{margin-left:auto}
   .service-card p,.why-grid p{font-size:1.05rem}
   .btn-lux,.btn-lux-alt{font-size:1.05rem;padding:14px 26px}
   .logo img{height:42px;width:42px}
-  .hero-bg,.hero-img-fallback{height:110px}
   .lux-headline{font-size:clamp(1.8rem,6vw,2.2rem);line-height:1.15}
   .lux-desc{font-size:.95rem;margin-bottom:18px}
 }
 
 /* =========================================================
-   TAGLINE HIGHLIGHT  (Flights line under mini-hero)
+   TAGLINE FORCE-WHITE  (wins in every browser)
 ========================================================= */
 .mini-hero-caption .lux-desc{
-  color:#ffffff;                             /* bright white */
-  text-shadow:0 2px 4px rgba(0,0,0,.35);     /* soft shadow */
-  font-weight:500;
+  color:#ffffff !important;
+  text-shadow:0 2px 4px rgba(0,0,0,.45) !important;
+  font-weight:500 !important;
 }
 
 /* =========================================================
