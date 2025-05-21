@@ -1,9 +1,11 @@
 /* =========================================================
-   Gill Luxury Travel  –  Full Luxury Stylesheet
-   (desktop & mobile, hero video, gallery, contact, etc.)
+   Gill Luxury Travel  –  FULL LUXURY STYLESHEET
+   • Desktop & Mobile   • Hero video   • Gallery   • Chat buttons
+   • Larger mobile text • Smaller hero viewport (60/50/40 vh)
    Last updated: 2025-05-21
 ========================================================= */
 
+/* ---------- Global tokens ---------- */
 :root{
   --navy:#0A1931;
   --gold:#D4AF37;
@@ -15,6 +17,7 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
+/* ---------- Base text ---------- */
 body{
   font-family:'Montserrat',sans-serif;
   color:var(--navy);
@@ -22,7 +25,7 @@ body{
   min-height:100vh;
   background-image:linear-gradient(120deg,#e8eaf6 0%,#f7f3e7 90%);
   background-attachment:fixed;
-  font-size:16px;                     /* will be overridden to 18px in mobile tweak */
+  font-size:16px;    /* will bump to 18 px on ≤600 px */
   line-height:1.6;
 }
 
@@ -31,17 +34,15 @@ body{
 a{color:var(--gold);text-decoration:none}
 a:hover,a:focus{color:#a6831b;text-decoration:underline}
 
-/* ─────────── Header & Nav ─────────── */
+/* =========================================================
+   HEADER  &  NAVIGATION
+========================================================= */
 header{
-  position:fixed;top:0;left:0;width:100vw;
+  position:fixed;inset:0 0 auto 0;width:100vw;
   background:var(--navy);color:var(--white);
-  box-shadow:0 2px 14px #0002;
-  z-index:1002;
+  box-shadow:0 2px 14px #0002;z-index:1002;
 }
-.header-inner{
-  display:flex;align-items:center;width:100%;
-  padding:0 8px;min-height:66px;
-}
+.header-inner{display:flex;align-items:center;min-height:66px;padding:0 8px}
 .logo img{
   height:52px;width:52px;object-fit:cover;
   border:2px solid var(--gold);border-radius:50%;background:#fff;
@@ -52,39 +53,36 @@ nav{margin-left:auto}
   font-family:'Playfair Display',serif;
 }
 .nav-list li a{
-  font-weight:700;color:var(--white);
-  font-size:1.08rem;letter-spacing:.5px;
-  padding:7px 16px;border-radius:6px;
-  transition:.2s;
+  font-weight:700;color:var(--white);font-size:1.08rem;
+  letter-spacing:.5px;padding:7px 16px;border-radius:6px;transition:.2s;
 }
 .nav-list li a:hover{background:var(--gold);color:var(--navy)}
 .mobile-toggle{display:none;font-size:2.1rem;margin-left:22px;color:var(--gold);cursor:pointer}
 
-/* mobile slide-in nav */
+/* Mobile slide-in menu */
 .mobile-nav-overlay{
   display:none;position:fixed;inset:0;width:100vw;height:100vh;
   background:rgba(10,25,49,.98);z-index:2002;
 }
 .mobile-nav-content{
-  background:var(--navy);width:80vw;max-width:340px;height:100vh;
-  box-shadow:-2px 0 32px #0006;padding:40px 30px 30px;
-  font-family:'Playfair Display',serif;
+  background:var(--navy);width:80vw;max-width:340px;height:100%;
+  box-shadow:-2px 0 32px #0006;padding:40px 30px;font-family:'Playfair Display',serif;
 }
-.close-mobile-nav{
-  font-size:2.3rem;color:var(--gold);float:right;margin-bottom:24px;cursor:pointer;
-}
-.mobile-nav-content ul{
-  list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:30px;
-}
+.close-mobile-nav{font-size:2.3rem;color:var(--gold);float:right;margin-bottom:24px;cursor:pointer}
+.mobile-nav-content ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:30px}
 .mobile-nav-content a{color:var(--gold);font-size:1.24rem;font-weight:700}
 .mobile-nav-content a:hover{color:var(--white)}
 
-/* ─────────── Hero ─────────── */
+/* =========================================================
+   HERO SECTION  (video / image)
+========================================================= */
 .hero,.pro-hero{
-  position:relative;height:96vh;min-height:460px;
+  position:relative;
+  height:60vh;           /* ↓  desktop  */
+  min-height:420px;      /* floor for big screens */
   display:flex;align-items:center;justify-content:center;
-  background:var(--hero-gradient);
-  overflow:hidden;margin-top:66px;box-shadow:0 14px 28px #d4af3720;
+  background:var(--hero-gradient);overflow:hidden;margin-top:66px;
+  box-shadow:0 14px 28px #d4af3720;
 }
 .hero-bg,.hero-img-fallback{
   position:absolute;inset:0;width:100%;height:100%;
@@ -100,30 +98,33 @@ nav{margin-left:auto}
   max-width:760px;margin:auto;
 }
 .lux-headline{
-  font-family:'Playfair Display',serif;font-weight:900;line-height:1.1;
-  font-size:2.7rem;margin-bottom:22px;letter-spacing:1.5px;
-  text-transform:uppercase;text-shadow:0 4px 24px #0a1931e6;
+  font-family:'Playfair Display',serif;font-weight:900;font-size:2.7rem;
+  line-height:1.1;margin-bottom:22px;text-transform:uppercase;
+  letter-spacing:1.5px;text-shadow:0 4px 24px #0a1931e6;
 }
 .lux-gold{color:var(--gold);letter-spacing:2px;text-shadow:0 2px 10px #d4af3766}
 .lux-desc{font-size:1.19rem;color:#fffbe7;margin-bottom:38px}
 .btn-lux,.btn-lux-alt{
-  background:linear-gradient(90deg,#D4AF37 10%,#b79527 90%);color:var(--navy);
-  padding:15px 34px;font-size:1.14rem;border-radius:10px;font-weight:800;
-  border:none;box-shadow:0 7px 24px #d4af3744;margin:0 8px 16px 0;
-  text-transform:uppercase;letter-spacing:1.1px;transition:.2s;cursor:pointer;
+  background:linear-gradient(90deg,#D4AF37 10%,#b79527 90%);
+  color:var(--navy);padding:15px 34px;font-size:1.14rem;border-radius:10px;
+  font-weight:800;text-transform:uppercase;border:none;
+  box-shadow:0 7px 24px #d4af3744;margin:0 8px 16px 0;letter-spacing:1.1px;
+  cursor:pointer;transition:.2s;
 }
 .btn-lux:hover,.btn-lux-alt:hover{background:var(--navy);color:var(--gold);border:2px solid var(--gold)}
 .btn-lux-alt{background:#f9f5ee;color:var(--navy);border:2px solid #e7c37b}
 .btn-lux-alt:hover{background:var(--gold);color:#fff}
 
-/* ─────────── Sections ─────────── */
+/* =========================================================
+   CORE SECTIONS
+========================================================= */
 .section{padding:80px 0}
 .section h2{
   text-align:center;font-family:'Playfair Display',serif;font-size:2.2rem;
-  color:var(--navy);margin-bottom:38px;font-weight:900;letter-spacing:1px;
+  color:var(--navy);margin-bottom:38px;font-weight:900
 }
 
-/* Why */
+/* WHY GRID */
 .why-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:32px;text-align:center;margin-top:18px;
@@ -131,30 +132,28 @@ nav{margin-left:auto}
 .why-grid i{font-size:2.2rem;color:var(--gold);margin-bottom:10px}
 .why-grid h4{font-size:1.17rem;font-weight:700;margin-bottom:8px}
 
-/* Services */
+/* SERVICES GRID */
 .services-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;
 }
 .service-card{
-  background:#fffefb;padding:28px 24px;border-radius:17px;
-  border:1.2px solid #ece6d8;box-shadow:0 5px 24px #d4af3740;
-  transition:.22s;min-height:190px;
+  background:#fffefb;padding:28px 24px;border-radius:17px;border:1.2px solid #ece6d8;
+  box-shadow:0 5px 24px #d4af3740;transition:.22s;min-height:190px
 }
 .service-card:hover{transform:translateY(-8px) scale(1.04);box-shadow:0 16px 40px #d4af3766;background:#f6f3ed}
 .service-card h3{font-family:'Playfair Display',serif;font-size:1.23rem;margin-bottom:12px}
 
-/* Gallery */
+/* GALLERY */
 .gallery-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px;
 }
 .gallery-grid img{
   width:100%;height:160px;object-fit:cover;border-radius:12px;
-  background:#fff;cursor:pointer;box-shadow:0 2px 14px #d4af3733;
-  transition:.25s;
+  background:#fff;cursor:pointer;box-shadow:0 2px 14px #d4af3733;transition:.25s
 }
 .gallery-grid img:hover{transform:scale(1.04) rotate(-.6deg);box-shadow:0 8px 30px #d4af373c}
 
-/* Lightbox */
+/* LIGHTBOX */
 #lightbox{
   display:none;position:fixed;inset:0;z-index:2222;
   background:rgba(10,25,49,.97);align-items:center;justify-content:center;
@@ -164,7 +163,7 @@ nav{margin-left:auto}
   box-shadow:0 8px 36px #000a;
 }
 
-/* Testimonials */
+/* TESTIMONIALS */
 .testimonial-slider{text-align:center;margin-top:10px}
 .testimonial-slider blockquote{
   background:#fff;border-left:6px solid var(--gold);border-radius:15px;
@@ -175,26 +174,22 @@ nav{margin-left:auto}
 .slick-dots li button:before{font-size:18px;color:var(--gold);opacity:.78}
 .slick-dots li.slick-active button:before{color:var(--navy);opacity:1}
 
-/* Contact */
+/* CONTACT */
 .contact-buttons{
   display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-bottom:26px;
 }
-.contact form{
-  max-width:480px;margin:0 auto 20px;display:grid;gap:16px;
-}
+.contact form{max-width:480px;margin:0 auto 20px;display:grid;gap:16px}
 .contact input,.contact textarea{
-  padding:14px 12px;border:2px solid var(--navy);border-radius:8px;font-size:1.06rem;background:#f9f8f4;
+  padding:14px 12px;border:2px solid var(--navy);border-radius:8px;font-size:1.06rem;
+  background:#f9f8f4;
 }
 .contact textarea{resize:vertical;min-height:110px}
 .contact-info{text-align:center;font-size:1.13rem;color:var(--navy);margin-top:18px}
 
-/* Footer */
-.footer{
-  background:var(--footer-bg);color:var(--white);text-align:center;
-  padding:24px 0;font-size:1rem;box-shadow:0 -2px 16px #0002;
-}
+/* FOOTER */
+.footer{background:var(--footer-bg);color:var(--white);text-align:center;padding:24px 0;font-size:1rem;box-shadow:0 -2px 16px #0002}
 
-/* Floating chat buttons */
+/* FLOATING CHAT BUTTONS */
 .float-btn{
   position:fixed;bottom:30px;right:26px;width:54px;height:54px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;font-size:2.1rem;cursor:pointer;
@@ -208,65 +203,43 @@ nav{margin-left:auto}
 .whatsapp-btn:hover{background:#128c7e;color:#fff}
 .insta-btn{bottom:98px}
 
-/* ─────────── Responsive Breakpoints ─────────── */
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+========================================================= */
 @media (max-width:1200px){.container{width:98%}}
-@media (max-width:900px){
-  .services-grid,.gallery-grid,.why-grid{grid-template-columns:1fr 1fr}
-}
-@media (max-width:850px){
-  .nav-list{display:none !important}
-  .mobile-toggle{display:block}
-}
+@media (max-width:900px){.services-grid,.gallery-grid,.why-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:850px){.nav-list{display:none !important}.mobile-toggle{display:block}}
 @media (max-width:700px){
   .container{width:99%}
   .why-grid,.gallery-grid,.services-grid{grid-template-columns:1fr;gap:18px}
   .testimonial-slider blockquote{padding:22px 7px 16px 15px;font-size:1rem}
 }
-@media (max-width:480px){
-  .logo img{height:42px;width:42px}
-  .btn-lux,.btn-lux-alt{font-size:.98rem;padding:12px 14px}
-}
 
-/* ───────────────────────────────────────────────
-   ▼▼  MOBILE READABILITY TWEAKS (requested) ▼▼
-─────────────────────────────────────────────── */
+/* =========================================================
+   MOBILE READABILITY TWEAKS &  HERO HEIGHT REDUCTION
+========================================================= */
 
-/* Bigger base font size on mobile */
+/* Bigger base font on small devices */
 @media (max-width:600px){
   body{font-size:18px;line-height:1.7}
 }
 
-/* Smaller hero height & bigger text on small screens */
+/* Hero viewport: tablet & phone */
+@media (max-width:1024px){
+  .hero,.pro-hero{height:50vh;min-height:360px}
+}
 @media (max-width:600px){
-  .hero,.pro-hero{height:65vh;min-height:400px}
+  .hero,.pro-hero{height:40vh;min-height:300px}
   .lux-headline{font-size:clamp(1.9rem,6vw,2.4rem);line-height:1.2}
   .lux-desc{font-size:1.05rem}
-}
-
-/* Smaller gallery thumbnails on mobile */
-@media (max-width:600px){
   .gallery-grid img{height:110px}
+  .service-card p,.why-grid p{font-size:1.05rem}
+  .btn-lux,.btn-lux-alt{font-size:1.05rem;padding:14px 26px}
+  .logo img{height:42px;width:42px}
 }
 
-/* Slight bump for card body text on mobile */
-@media (max-width:600px){
-  .service-card p,
-  .why-grid p{font-size:1.05rem}
-}
-
-/* Keep buttons easy to tap with bigger label */
-.btn-lux,.btn-lux-alt{
-  /* already large; just in case mobile override */
-  font-size:1.05rem;
-  padding:14px 26px;
-}
-
-/* Animation keyframes */
-@keyframes fadeInDown{
-  0%{opacity:0;transform:translateY(-52px)}
-  100%{opacity:1;transform:none}
-}
-@keyframes fadeIn{
-  0%{opacity:0}
-  100%{opacity:1}
-}
+/* =========================================================
+   ANIMATION KEYFRAMES
+========================================================= */
+@keyframes fadeInDown{0%{opacity:0;transform:translateY(-52px)}100%{opacity:1;transform:none}}
+@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
