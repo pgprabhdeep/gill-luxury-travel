@@ -10,36 +10,45 @@ header {
   justify-content: space-between;
   align-items: center;
   background: #0A1931;
-  padding: 15px 40px;
+  padding: 20px 40px;
 }
 
-.logo {
+.logo-title {
   display: flex;
   align-items: center;
-  color: #D4AF37;
-  font-size: 1.7rem;
-  font-weight: bold;
-  gap: 10px;
+  gap: 15px;
 }
-.logo img {
-  height: 55px;
-  width: 55px;
+
+.logo-img {
+  height: 68px;
+  width: 68px;
   border-radius: 50%;
   background: #fff;
-  object-fit: cover;
+  object-fit: contain;
+  border: 2.5px solid #D4AF37;
+}
+
+.brand-line1, .brand-line2 {
+  color: #D4AF37;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-size: 2.1rem;
+  letter-spacing: 1px;
+  line-height: 1.1;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 26px;
   margin: 0;
   padding: 0;
 }
 nav a {
   text-decoration: none;
   color: white;
-  font-size: 1rem;
+  font-size: 1.15rem;
+  font-family: 'Georgia', serif;
   transition: color 0.2s;
 }
 nav a:hover {
@@ -47,28 +56,29 @@ nav a:hover {
 }
 
 .hero {
-  background: linear-gradient(rgba(10,25,49,0.6),rgba(10,25,49,0.4)),
-    url('https://images.unsplash.com/photo-1465156799763-2c087c332922?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  background: linear-gradient(rgba(10,25,49,0.6), rgba(10,25,49,0.2)), url('https://images.unsplash.com/photo-1549921296-3a45f9802c4f?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
   color: #fff;
   text-align: center;
-  padding: 110px 20px 80px 20px;
+  padding: 120px 20px 130px 20px;
 }
+
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   margin-bottom: 20px;
 }
 .hero p {
-  font-size: 1.4rem;
-  margin-bottom: 30px;
+  font-size: 1.5rem;
+  margin-bottom: 34px;
 }
+
 .btn {
   background: #D4AF37;
   color: #0A1931;
-  padding: 13px 28px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
+  padding: 13px 32px;
   border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.15rem;
+  text-decoration: none;
   border: none;
   cursor: pointer;
   transition: background 0.2s;
