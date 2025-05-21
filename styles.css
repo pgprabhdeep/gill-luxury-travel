@@ -136,3 +136,15 @@ nav{margin-left:auto}
 /* Keyframes */
 @keyframes fadeInDown{0%{opacity:0;transform:translateY(-52px)}100%{opacity:1;transform:none}}
 @keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+/* ═════════ SAFARI-SAFE HERO THUMBNAIL ═════════ */
+
+/* Hide old overlay text */
+.hero-content{display:none}
+
+/* Hero behaves like banner */
+.hero,.pro-hero{height:auto;min-height:0}
+.hero-bg,.hero-img-fallback{width:100%;height:160px;object-fit:cover}
+@media (max-width:600px){
+  .hero-bg,.hero-img-fallback{height:110px}
+  .gallery-grid img{height:110px}        /* keep gallery proportional */
+}
