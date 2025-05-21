@@ -33,7 +33,6 @@
           <li><a href="#why">Why Choose Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#partners">Partners</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
@@ -135,21 +134,6 @@
     </div>
   </section>
 
-  <!-- PARTNERS SLIDER -->
-  <section id="partners" class="section partners" data-aos="fade-up">
-    <div class="container">
-      <h2>Our Trusted Partners</h2>
-      <div class="partners-slider">
-        <div><img src="marriott.png" alt="Marriott"></div>
-        <div><img src="westjet.png" alt="WestJet"></div>
-        <div><img src="aircanada.png" alt="Air Canada"></div>
-        <div><img src="princess.png" alt="Princess Cruises"></div>
-        <div><img src="hilton.png" alt="Hilton"></div>
-        <div><img src="msc.png" alt="MSC Cruises"></div>
-      </div>
-    </div>
-  </section>
-
   <!-- TESTIMONIALS CAROUSEL -->
   <section id="testimonials" class="section testimonials" data-aos="fade-up">
     <div class="container">
@@ -241,20 +225,8 @@
       document.getElementById('lightbox').style.display = 'flex';
     }
 
-    // Partners slider
+    // Testimonial carousel
     $(document).ready(function () {
-      $('.partners-slider').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2200,
-        arrows: false,
-        dots: false,
-        responsive: [
-          { breakpoint: 900, settings: { slidesToShow: 3 } },
-          { breakpoint: 600, settings: { slidesToShow: 2 } }
-        ]
-      });
       $('.testimonial-slider').slick({
         slidesToShow: 1,
         arrows: false,
