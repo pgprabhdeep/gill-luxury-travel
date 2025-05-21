@@ -20,7 +20,7 @@
   
   <!-- Lightbox -->
   <div id="lightbox" onclick="this.style.display='none'">
-    <img id="lightbox-img" alt="Enlarged Gallery Image">
+    <img id="lightbox-img" alt="">
   </div>
 
   <!-- HEADER -->
@@ -28,7 +28,7 @@
     <div class="container header-inner">
       <a href="#" class="logo"><img src="Logo.png" alt="Gill Luxury Travel Logo"></a>
       <nav>
-        <ul class="nav-list">
+        <ul class="nav-list" id="mainNav">
           <li><a href="#home">Home</a></li>
           <li><a href="#why">Why Choose Us</a></li>
           <li><a href="#services">Services</a></li>
@@ -42,7 +42,22 @@
           </li>
         </ul>
       </nav>
-      <div class="mobile-toggle"><i class="fa fa-bars"></i></div>
+      <div class="mobile-toggle" id="navToggle"><i class="fa fa-bars"></i></div>
+    </div>
+    <!-- Slide-in overlay menu for mobile -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+      <div class="mobile-nav-content">
+        <span class="close-mobile-nav" id="closeMobileNav">&times;</span>
+        <ul>
+          <li><a href="#home" onclick="closeMobileNav()">Home</a></li>
+          <li><a href="#why" onclick="closeMobileNav()">Why Choose Us</a></li>
+          <li><a href="#services" onclick="closeMobileNav()">Services</a></li>
+          <li><a href="#gallery" onclick="closeMobileNav()">Gallery</a></li>
+          <li><a href="#testimonials" onclick="closeMobileNav()">Testimonials</a></li>
+          <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+          <li><a href="https://www.instagram.com/gillluxurytravel" target="_blank" onclick="closeMobileNav()"><i class="fab fa-instagram"></i> Instagram</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -212,15 +227,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
+    // Animate on scroll
     AOS.init({ duration: 900, once: true });
 
-    // Mobile nav toggle
-    document.querySelector('.mobile-toggle').addEventListener('click', () => {
-      document.querySelector('.nav-list').classList.toggle('open');
-    });
+    // Hamburger mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    const closeMobileNavBtn = document.getElementById('closeMobileNav');
+    navToggle.onclick = () => { mobileNavOverlay.style.display = 'block'; };
+    closeMobileNavBtn.onclick = closeMobileNav;
+    function closeMobileNav() { mobileNavOverlay.style.display = 'none'; }
 
     // Lightbox
-    function openLightbox(src) {
+    window.openLightbox = function(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').style.display = 'flex';
     }
