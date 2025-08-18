@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gillluxurytravel.com/sitemap.xml

@@ -66,6 +66,7 @@ nav{margin-left:auto}
   object-fit:cover;
   filter:brightness(.68) contrast(1.05);
   display:block;                 /* removes inline gap */
+  will-change:transform;
 }
 @media (max-width:600px){
   .hero-bg,.hero-img-fallback{height:110px;max-height:110px}
@@ -81,9 +82,14 @@ nav{margin-left:auto}
 .btn-lux,.btn-lux-alt{
   background:linear-gradient(90deg,#D4AF37 10%,#b79527 90%);
   color:var(--navy);padding:12px 30px;font-size:1rem;border-radius:10px;font-weight:800;
-  border:none;box-shadow:0 4px 18px #d4af3744;cursor:pointer;transition:.2s
+  border:none;box-shadow:0 4px 18px #d4af3744;cursor:pointer;
+  transition:background .3s,color .3s,transform .3s;
+  will-change:transform;
 }
-.btn-lux:hover,.btn-lux-alt:hover{background:var(--navy);color:var(--gold);border:2px solid var(--gold)}
+.btn-lux:hover,.btn-lux-alt:hover{
+  background:var(--navy);color:var(--gold);border:2px solid var(--gold);
+  animation:btnFloat .3s forwards;
+}
 .btn-lux-alt{background:#f9f5ee;color:var(--navy);border:2px solid #e7c37b}
 .btn-lux-alt:hover{background:var(--gold);color:#fff}
 
@@ -99,8 +105,17 @@ nav{margin-left:auto}
 .why-grid i{font-size:2rem;color:var(--gold);margin-bottom:8px}
 .why-grid h4{font-size:1.1rem;margin-bottom:6px}
 .services-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.service-card{background:#fffefb;border:1px solid #ece6d8;border-radius:16px;padding:26px 22px;box-shadow:0 4px 20px #d4af3733;transition:.2s}
-.service-card:hover{transform:translateY(-6px);box-shadow:0 14px 34px #d4af3760;background:#f6f3ed}
+.service-card{
+  background:#fffefb;border:1px solid #ece6d8;border-radius:16px;padding:26px 22px;
+  box-shadow:0 4px 20px #d4af3733;
+  transform:translateY(0);
+  transition:background .3s,box-shadow .3s;
+  will-change:transform;
+}
+.service-card:hover{
+  animation:cardLift .3s forwards;
+  box-shadow:0 14px 34px #d4af3760;background:#f6f3ed;
+}
 .service-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:10px}
 
 /* Gallery */
@@ -171,6 +186,8 @@ nav{margin-left:auto}
 ========================================================= */
 @keyframes fadeInDown{0%{opacity:0;transform:translateY(-52px)}100%{opacity:1;transform:none}}
 @keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+@keyframes btnFloat{to{transform:translateY(-3px)}}
+@keyframes cardLift{to{transform:translateY(-6px)}}
 /* ═════════ Chrome-specific clutch overrides ═════════ */
 
 /* — Hero banner: never taller than 180 px (110 px on phones) — */
@@ -200,4 +217,13 @@ nav{margin-left:auto}
 }
 @media (max-width:600px){
   .gallery-grid img{height:110px !important;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .btn-lux:hover,
+  .btn-lux-alt:hover,
+  .service-card:hover{
+    animation:none;
+  }
+  .hero-bg{transform:none !important;}
 }
