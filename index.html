@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gill Luxury Travel | Luxury Holidays & Concierge</title>
+  <meta name="description" content="Luxury travel planning and concierge services in Canada." />
+  <meta property="og:title" content="Gill Luxury Travel" />
+  <meta property="og:description" content="Luxury travel planning and concierge services in Canada." />
+  <meta property="og:image" content="hero.jpg.png" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gill Luxury Travel" />
+  <meta name="twitter:description" content="Luxury travel planning and concierge services in Canada." />
+  <meta name="twitter:image" content="hero.jpg.png" />
 
   <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -126,12 +135,12 @@
     <div class="container">
       <h2>Gallery</h2>
       <div class="gallery-grid">
-        <img src="gallery1.jpg.png" alt="Gallery 1" onclick="openLightbox(this.src)">
-        <img src="gallery2.jpg.png" alt="Gallery 2" onclick="openLightbox(this.src)">
-        <img src="gallery3.jpg.png" alt="Gallery 3" onclick="openLightbox(this.src)">
-        <img src="gallery4.jpg.png" alt="Gallery 4" onclick="openLightbox(this.src)">
-        <img src="gallery5.jpg.png" alt="Gallery 5" onclick="openLightbox(this.src)">
-        <img src="gallery6.jpg.png" alt="Gallery 6" onclick="openLightbox(this.src)">
+        <img src="gallery1.jpg.png" alt="Sunset over tropical beach" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="gallery2.jpg.png" alt="Private overwater villas" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="gallery3.jpg.png" alt="Luxury mountain resort" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="gallery4.jpg.png" alt="Elegant hotel lobby" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="gallery5.jpg.png" alt="Cruise ship at dusk" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="gallery6.jpg.png" alt="Hot air balloons over valley" loading="lazy" onclick="openLightbox(this.src)">
       </div>
     </div>
   </section>
@@ -174,43 +183,13 @@
     <div class="container">© 2025 Gill Luxury Travel. All Rights Reserved.</div>
   </footer>
 
+  <div id="chatbot" class="chatbot"></div>
+
   <!-- JS libraries -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-  <script>
-    /* AOS animations */
-    AOS.init({duration:900,once:true});
-
-    /* mobile nav */
-    const navToggle = document.getElementById('navToggle');
-    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-    const closeMobileNavBtn = document.getElementById('closeMobileNav');
-    navToggle.onclick = () => mobileNavOverlay.style.display = 'block';
-    function closeMobileNav(){mobileNavOverlay.style.display = 'none'}
-    closeMobileNavBtn.onclick = closeMobileNav;
-
-    /* gallery lightbox */
-    window.openLightbox = src => {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').style.display = 'flex';
-    };
-
-    /* testimonials slider */
-    $(function(){
-      $('.testimonial-slider').slick({
-        slidesToShow:1,
-        arrows:false,
-        dots:true,
-        autoplay:true,
-        autoplaySpeed:4500,
-        adaptiveHeight:true
-      });
-    });
-  </script>
-
-  <!-- Tidio AI Chatbot -->
-  <script src="//code.tidio.co/znhqtvynz3dazeltuwoz9ilsds21c0u2.js" async></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/chatbot.js"></script>
 </body>
 </html>

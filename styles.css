@@ -66,6 +66,7 @@ nav{margin-left:auto}
   object-fit:cover;
   filter:brightness(.68) contrast(1.05);
   display:block;                 /* removes inline gap */
+  will-change:transform;
 }
 @media (max-width:600px){
   .hero-bg,.hero-img-fallback{height:110px;max-height:110px}
@@ -81,9 +82,9 @@ nav{margin-left:auto}
 .btn-lux,.btn-lux-alt{
   background:linear-gradient(90deg,#D4AF37 10%,#b79527 90%);
   color:var(--navy);padding:12px 30px;font-size:1rem;border-radius:10px;font-weight:800;
-  border:none;box-shadow:0 4px 18px #d4af3744;cursor:pointer;transition:.2s
+  border:none;box-shadow:0 4px 18px #d4af3744;cursor:pointer;transition:.2s,transform .2s
 }
-.btn-lux:hover,.btn-lux-alt:hover{background:var(--navy);color:var(--gold);border:2px solid var(--gold)}
+.btn-lux:hover,.btn-lux-alt:hover{background:var(--navy);color:var(--gold);border:2px solid var(--gold);transform:translateY(-2px)}
 .btn-lux-alt{background:#f9f5ee;color:var(--navy);border:2px solid #e7c37b}
 .btn-lux-alt:hover{background:var(--gold);color:#fff}
 
@@ -136,6 +137,20 @@ nav{margin-left:auto}
 .whatsapp-btn:hover{background:#128c7e;color:#fff}
 .insta-btn{right:94px;bottom:98px;background:#E4405F;color:#fff}
 .insta-btn:hover{background:#fff;color:#E4405F}
+
+/* =========================================================
+   Chatbot
+========================================================= */
+.chatbot{position:fixed;bottom:20px;right:20px;width:300px;max-height:400px;display:flex;flex-direction:column;background:#fff;border:2px solid var(--gold);border-radius:10px;box-shadow:0 4px 20px #0002;overflow:hidden;z-index:4000;font-size:.9rem}
+.chatbot-header{background:var(--navy);color:#fff;padding:8px 12px;font-weight:700}
+.chatbot-messages{flex:1;padding:10px;overflow-y:auto}
+.chatbot-messages .user-msg{margin-bottom:8px;text-align:right;color:var(--navy)}
+.chatbot-messages .bot-msg{margin-bottom:8px;text-align:left;color:var(--navy)}
+.chatbot-messages .error{color:red}
+.chatbot-input{display:flex;border-top:1px solid #eee}
+.chatbot-input input{flex:1;border:none;padding:8px}
+.chatbot-input button{border:none;background:var(--gold);color:var(--navy);padding:8px 12px;font-weight:700;cursor:pointer}
+.chatbot-input button:hover{background:var(--navy);color:var(--gold)}
 
 /* =========================================================
    RESPONSIVE
